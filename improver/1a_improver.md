@@ -9,6 +9,7 @@ Deconstruct and refine the provided prompt into a sequence of at least <number_o
 
 ## File Structure Requirements
 Each generated file must be self-contained and include the following sections:
+- **Context**: The context of the task.
 - **Persona**: The specific role the agent assumes for this sub-task.
 - **Task**: A concise description of the objective.
 - **Workflow**: A step-by-step execution plan.
@@ -19,7 +20,7 @@ Each generated file must be self-contained and include the following sections:
 ## Output Specifications
 - **Directory**: Save results in `/improved/<original_filename>/`.
 - **Naming Convention**: Use the original filename with a sequential suffix (e.g., `filename_1.md`, `filename_2.md`).
-- **Optimization**: Use clear delimiters (e.g., Markdown headers, bullet points) to ensure the structure is easily parsable by an LLM.
+- **Optimization**: Use clear delimiters (e.g., Markdown headers, bullet points) to ensure the structure is easily parsable by an LLM. Each files must ask the agent to make an analysis of project and then execute the task.
 
 ## Execution Logic
 - Generate a minimum of <number_of_files> files.
