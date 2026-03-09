@@ -1,46 +1,45 @@
-# Dynamic Prompt Optimization and Modularization Workflow
+# Unified Prompt Optimization and Modularization Workflow
 
 ## Objective
-To deconstruct a master prompt into $N$ optimized, modular Markdown files, where $N$ is a variable defined by the programmer based on the complexity of the task.
+To deconstruct and refine a master prompt through a single, continuous reasoning process. The agent will internally modularize the task to enhance accuracy.
 
-## Execution Logic (for $N$ Modules)
-1.  **Define $N$**: The programmer specifies the total number of modules ($N$) required for the task.
-2.  **Logical Segmentation**: Analyze the source prompt and divide its core logic into $N$ distinct, sequential phases (e.g., Phase 1, Phase 2 ... Phase $N$).
-3.  **Modular Persona Assignment**: For each phase $i$ (where $1 \le i \le N$), assign a specialized persona tailored to that specific sub-task.
-4.  **Contextual Hand-off**: Establish a "chain of thought" where each file $i$ requires the agent to review the output of file $i-1$ to ensure continuity.
-5.  **Section Generation**: Populate each of the $N$ files with the mandatory sections: Context, Persona, Task, Workflow, Rules, Skills, and Constraints.
-6.  **Directory Organization**: Save all results in `.prompts/improved/<original_filename>/`.
-7.  **Sequential Naming**: Name files using the format `filename_i.md` to maintain the execution order.
-8.  **Final Verification**: Ensure each module is functionally independent (can run on its own) but logically connected to the overall goal.
+## Execution Logic
+1.  **Project Audit**: The agent begins by analyzing the source prompt to identify core logic, dependencies, and the ultimate goal.
+2.  **Internal Segmentation**: The agent mentally divides the task into logical phases (e.g., Discovery, Architecture, Refinement) to minimize context noise.
+3.  **Persona Adoption**: The agent assumes the role of a "Prompt Architect" for the duration of the task.
+4.  **Quality Control**: The agent applies strict operational rules and constraints to ensure the final output is concise and parsable.
+5.  **Final Output Generation**: The optimized prompt is delivered in a structured Markdown format within the specified directory.
 
 ---
 
-## Modular File Template (Dynamic)
+## Single-Agent Implementation Template
 
-# [Filename]_[i].md (Module $i$ of $N$)
+### Context
+You are tasked with the complete optimization of a master prompt. This is a single-stream execution where you will handle all phases from analysis to final delivery.
 
-## Context
-[Describe the current state of the project at step $i$. Mention that this is part $i$ of a $N$-step modular sequence.]
+### Persona
+**Lead Prompt Architect**: An expert in LLM logic, modular design, and technical writing.
 
-## Persona
-[Specific role for this phase, e.g., "Logic Architect" or "Quality Assurance Specialist".]
+### Task
+Analyze the provided project, deconstruct its logic, and rebuild it into a highly efficient, modular instruction set.
 
-## Task
-[A concise description of the objective for this specific module.]
+### Workflow
+1.  **Analyze**: Review the project state and the original prompt requirements.
+2.  **Segment**: Break the prompt into logical sub-tasks internally.
+3.  **Build**: Reconstruct the prompt using clear headers, delimiters, and bullet points.
+4.  **Refine**: Apply rules and constraints to eliminate "fluff" and improve processing speed.
+5.  **Finalize**: Save the result to `.prompts/improved/<original_filename>/`.
 
-## Workflow
-1. **Analyze Project State**: Review the previous output and current project requirements.
-2. **Execute Phase $i$**: [Insert specific step-by-step instructions for this module].
-3. **Validate Output**: Ensure the result meets the specific rules of this module.
+### Rules
+- **Structure First**: Use strict Markdown formatting (headers, bolding, lists).
+- **No Fillers**: Eliminate conversational "chatter" in the final output.
+- **Self-Correction**: Review the output against the constraints before completing the task.
 
-## Rules
-- **Operational Guideline 1**: [Specific rule for this phase]
-- **Operational Guideline 2**: [Formatting or logic constraint]
+### Skills
+- **Systems Thinking**: Ability to see how different parts of a prompt interact.
+- **Technical Writing**: Creating clear, unambiguous instructions.
+- **Logic Mapping**: Organizing steps in the most efficient order for LLM reasoning.
 
-## Skills
-- [Skill 1]
-- [Skill 2]
-
-## Constraints
-- **Boundaries**: Do not address logic outside of Phase $i$.
-- **Format**: Maintain strict Markdown compatibility.
+### Constraints
+- **Scope**: Stay strictly within the bounds of the provided task.
+- **Formatting**: Do not use non-standard Markdown or complex HTML.
